@@ -58,8 +58,6 @@ int compare_checksum(FILE *file, const EVP_MD *md, const char *algorithm,
     return 0;
   }
 
-  printf("Stored Checksum: %s\n", storedChecksum);
-  printf("Calculated Digest: ");
   for (int i = 0; i < EVP_MD_size(md); i++) {
     printf("%02x", digest[i]);
   }
