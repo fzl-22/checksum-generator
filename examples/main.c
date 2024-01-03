@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "hash-calculator/hash-calculator.h"
 
 #define PROGRAM_VERSION "1.0.0"
 
