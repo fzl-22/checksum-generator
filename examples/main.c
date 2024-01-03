@@ -3,7 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define PROGRAM_VERSION "1.0.0"
+
 int main(int argc, char *argv[]) {
+  if (argc == 2 && strcmp(argv[1], "--version") == 0) {
+    printf("checksum-gen v%s\n", PROGRAM_VERSION);
+    return EXIT_SUCCESS;
+  }
+
   if ((argc != 4 && argc != 6 && argc != 7) || strcmp(argv[1], "-a") != 0) {
     fprintf(stderr,
             "Usage: %s -a <algorithm> <filename> [-c <checksum_file>]\n",
