@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   if ((argc != 4 && argc != 6 && argc != 7) || strcmp(argv[1], "-a") != 0) {
     fprintf(stderr,
-            "Usage: %s -a <algorithm> <filename> [-c <checksum_file>]\n",
+            "Usage: %s -a <algorithm> <filename> [-v <checksum_file>]\n",
             argv[0]);
     return EXIT_FAILURE;
   }
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  if (argc == 6 && strcmp(argv[4], "-c") == 0) {
+  if (argc == 6 && strcmp(argv[4], "-v") == 0) {
     FILE *inputFile = fopen(argv[5], "r");
     if (inputFile == NULL) {
       perror("Error opening checksum file");
